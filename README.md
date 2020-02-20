@@ -17,22 +17,31 @@ Se realiza la persistencia en memoria
 
 ## API
 Se ha adjuntado el siguiente fichero "Tweets.postman_collection.json" para importarlo en Postman y poder probar las invocaciones posibles.
-- **Consultar** los tweets 							-> GET 		/tweets
+<br/>
+| Acción                                                | URL                       | Método |
+ ------------------------------------------------------ | ------------------------- | -------|
+| **Consultar** los tweets 						        | /tweets                   | GET    |
+| **Consultar** los tweets **validados/no validados**   | /tweets?areValidated=true | GET    |
+| **Validar** tweets                                    | /tweets/{id}              | PATCH  |
+| **Consultar** los **trending Hashtags**               | /trendingHashtags         | GET    |
 
-- **Consultar** los tweets **validados/no validados** 	-> GET 		/tweets?areValidated=true 		
-> Valores permitidos => areValidated Igual ignorando mayusculas/minusculas al String "true", cualquier otro valor buscará los tweets no validados
+<br/>
+**Valores permitidos**
+> `?areValidated=true` ignorando mayusculas/minúsculas, cualquier otro valor buscará los tweets no validados
 
-- **Validar** tweets 									-> PATCH	/tweets/{id}					
-> Siendo {id} el valor del id asignado al tweet grabado en memoria
-
-- **Consultar** los **trending Hashtags**					-> GET		/trendingHashtags
+> Siendo `{id}` el valor del id asignado al tweet grabado en memoria
 
 
 # Construcción del proyecto | Test JUnit
-Hacer `mvn clean install` en el directorio raiz. 
-> Este proceso puede tardar aproximadamente 1 minuto al incluir los test para cada operativa.
+Descargar el repositorio con el comando:
+`git clone https://github.com/MauricioRicciCalvo/Microservices-twitter.git` <br/> 
+y posicionarse en el proyecto 
+<br/>`cd Microservices-twitter`
+
+Hacer `mvn clean install` en este directorio. 
+> Este proceso puede tardar aproximadamente 1-2 minuto al incluir los test para cada operativa.
 
 
 ## Lanzar el microservicio
-Hacer `mvn spring-boot:run` en el directorio raiz. Este comando pondrá en funcionamiento el microservicio, pudiendo de esta forma comenzar a emplear su API. 
-> URL : http://localhost:8080/tweets - Consultar API
+Hacer `mvn spring-boot:run` en el directorio. Este comando pondrá en funcionamiento el microservicio, pudiendo de esta forma comenzar a emplear su API. 
+> URL : http://localhost:8080/tweets - Consultar API para el resto de invocaciones
