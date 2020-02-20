@@ -1,6 +1,6 @@
 # Microservices-twitter
 
-## Descripcion microservicio
+## Descripción microservicio
 Microservicio que consume Tweets que basado en unas restricciones los persiste en una base de datos para su gestión a través de una API REST.
 
 
