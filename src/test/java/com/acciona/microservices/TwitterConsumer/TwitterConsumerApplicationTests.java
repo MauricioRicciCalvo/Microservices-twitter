@@ -69,7 +69,7 @@ public class TwitterConsumerApplicationTests {
 		int randomLowNumber = (int) (Math.floor(Math.random() * 6)); // Numero aleatorio para coger alguno de los primeros tweets
 		// Verificar restricciones
 		assertThat(result.getBody().get(randomLowNumber).getFollowers(), is((greaterThan(1500))));
-		assertThat(result.getBody().get(randomLowNumber).getLang(), anyOf(equalTo("es"), equalTo("en"), equalTo("fr")));
+		assertThat(result.getBody().get(randomLowNumber).getLang(), anyOf(equalTo("es"), equalTo("it"), equalTo("fr")));
 	}
 	
 	@Test

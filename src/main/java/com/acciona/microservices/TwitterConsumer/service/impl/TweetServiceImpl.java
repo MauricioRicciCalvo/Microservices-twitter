@@ -59,7 +59,7 @@ public class TweetServiceImpl implements ITweetService {
 		if (status.getUser() == null || status.getUser().getFollowersCount() <= MIN_NUMBER_FOLLOWERS) {
 			return false;
 		}
-		if(!"es".equalsIgnoreCase(status.getLang()) && !"en".equalsIgnoreCase(status.getLang()) && !"fr".equalsIgnoreCase(status.getLang()) ) {
+		if(!"es".equalsIgnoreCase(status.getLang()) && !"it".equalsIgnoreCase(status.getLang()) && !"fr".equalsIgnoreCase(status.getLang()) ) {
 			return false;
 		}	
 		return true;
