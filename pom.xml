@@ -12,7 +12,7 @@
 	<artifactId>TwitterConsumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TwitterConsumer</name>
-	<description>Microservicio encargado de consumir el API de Twitter</description>
+	<description>Microservicio que consumira el API de Twitter</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -23,7 +23,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -44,12 +47,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
+		</dependency>
+		<!-- twitter Apache License 2.0 -->
+ 		<dependency>
+           <groupId>org.twitter4j</groupId>
+           <artifactId>twitter4j-core</artifactId>
+           <version>[4.0,)</version>
+       </dependency>
+       <dependency>
+		    <groupId>org.twitter4j</groupId>
+		    <artifactId>twitter4j-stream</artifactId>
+		    <version>[4.0,)</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.4.1</version>
 		</dependency>
 	</dependencies>
 
