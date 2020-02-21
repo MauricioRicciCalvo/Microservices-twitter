@@ -1,3 +1,4 @@
+
 # Microservices-twitter
 
 ## Descripción microservicio
@@ -25,7 +26,7 @@ Se ha adjuntado el siguiente fichero "Tweets.postman_collection.json" para impor
 | **Validar** tweets                                    | /tweets/{id}              | PATCH  |
 | **Consultar** los **trending Hashtags**               | /trendingHashtags         | GET    |
 
-<br/>
+
 **Valores permitidos**
 > `?areValidated=true` ignorando mayusculas/minúsculas, cualquier otro valor buscará los tweets no validados
 
