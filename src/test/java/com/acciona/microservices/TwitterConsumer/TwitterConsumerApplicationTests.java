@@ -50,7 +50,7 @@ public class TwitterConsumerApplicationTests {
 	
 	@Before
 	public void initializingDataTime() throws InterruptedException {
-		Thread.sleep(5 * 1000);
+		Thread.sleep(8 * 1000);
 	}
 
 	@Test
@@ -66,10 +66,13 @@ public class TwitterConsumerApplicationTests {
 		// Verificar que contiene un cuerpo
 		assertThat(result.getBody(), is(not(nullValue())));
 
-		int randomLowNumber = (int) (Math.floor(Math.random() * 6)); // Numero aleatorio para coger alguno de los primeros tweets
-		// Verificar restricciones
-		assertThat(result.getBody().get(randomLowNumber).getFollowers(), is((greaterThan(1500))));
-		assertThat(result.getBody().get(randomLowNumber).getLang(), anyOf(equalTo("es"), equalTo("it"), equalTo("fr")));
+		//Evitar posible outBound detectado en horas de poca actividad
+		if(result.getBody().size() != 0) {
+			int randomNumber = (int) (Math.floor(Math.random() * result.getBody().size()))  ; // TweetAleatorio
+			// Verificar restricciones
+			assertThat(result.getBody().get(randomNumber).getFollowers(), is((greaterThan(1500))));
+			assertThat(result.getBody().get(randomNumber).getLang(), anyOf(equalTo("es"), equalTo("it"), equalTo("fr")));
+		}
 	}
 	
 	@Test
